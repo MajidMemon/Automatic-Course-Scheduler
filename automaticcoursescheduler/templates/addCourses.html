@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<title>Add Course</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<style>
+  
+
+.container {
+    background-color: #ebeae8;
+    padding: 0.01em 16px;
+    margin-bottom: 10px;
+}    
+
+
+button
+{
+	border-style:none;
+}
+
+h1, h2, h3, h4, h5{
+    text-align: center;
+
+}
+form {
+  margin-top: 2%;
+  margin-left: 18%;
+  margin-right: 21%;
+}
+
+fieldset {
+  padding: 40px;
+  border-width: 20px;
+  border-style: groove;
+  border-color: #5a5a5a;
+  background-color: #fff;
+  margin-top: 3%;
+  margin-left: 18%;
+  margin-right: 12%;
+  padding: 50px;
+  border-width: 25px;
+  border-style: ridge;
+  border-color: #257a7a;
+  box-shadow: 6px 13px 13px 0px black;
+  background-color: #ebfffa;
+}
+
+fieldset h1 {
+  color: #5a5a5a;
+  padding-bottom: 20px;
+  margin-left: 35px;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 28px;
+  text-align: center;
+}
+
+fieldset label {
+  margin-left: 40px;
+  padding: 23px;
+  font-size: 20px;
+  display: inline-block;
+  width: 240px;
+}
+
+fieldset input {
+  padding: 8px;
+  color: #938c8c;
+}
+
+fieldset input:focus {
+  color: #000;
+}
+
+fieldset button {
+  margin-left: 60px;
+  color: #fff;
+  background-color: #5a5a5a;
+  border-radius: 3px;
+  padding: 13px 39px;
+  text-align: center;
+  letter-spacing: 0.9px;
+  text-decoration: none;
+  margin-right: 10px;
+  line-height: 26px;
+  font-size: 16px;
+  box-shadow: 0px 1px 3px 0px #5a5a5a;
+  right: 100px;
+  margin-top: 15px;
+}
+.dropdown-check-list {
+  display: inline-block;
+}
+.dropdown-check-list .anchor {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  padding: 5px 50px 5px 10px;
+  border: 1px solid #ccc;
+}
+.dropdown-check-list .anchor:after {
+  position: absolute;
+  content: "";
+  border-left: 2px solid black;
+  border-top: 2px solid black;
+  padding: 5px;
+  right: 10px;
+  top: 20%;
+  -moz-transform: rotate(-135deg);
+  -ms-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}
+.dropdown-check-list .anchor:active:after {
+  right: 8px;
+  top: 21%;
+}
+.dropdown-check-list ul.items {
+  padding: 2px;
+  display: none;
+  margin: 0;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+.dropdown-check-list ul.items li {
+  list-style: none;
+}
+
+.submit{
+	margin-left: 60px;
+	color: #fff;
+	background-color: #3498db;
+	border-radius: 3px;
+	padding: 13px 39px;
+	text-align: center;
+	letter-spacing: 0.9px;
+	text-decoration: none;
+	margin-right: 10px;
+	line-height: 26px;
+	font-size: 16px;
+	box-shadow: 0px 1px 3px 0px #5a5a5a;
+	right: 100px;
+	margin-top: 15px;
+}
+
+#link_to_edit{
+    padding-left: 45px;
+}
+
+.fieldset{
+	margin-top: 3%;
+	margin-left: 18%;
+	margin-right: 12%;
+	padding: 50px;
+	border-width: 25px;
+	border-style: ridge;
+	border-color: #257a7a;
+	box-shadow: 6px 13px 13px 0px black;
+	background-color: #ebfffa;
+}
+/* styles.css */
+.checkbox-container {
+    background: white;
+   
+    border: 1px solid #ccc;
+    max-height: 250px;
+    overflow-y: auto; /* Enable vertical scrollbar */
+}
+
+.checkbox-item {
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+}
+
+.instructor-checkboxes label {
+    display: block; /* Display checkboxes vertically */
+    margin-bottom: 5px;
+}
+
+.search-container {
+  display: inline-block;
+  margin-right: 20px; /* Adjust as needed */
+}
+
+.search-container input[type="text"] {
+  width: 200px; /* Adjust the width as needed */
+}
+
+label[for="id_select_instructor"] {
+  display: inline-block;
+  vertical-align: top; /* Aligns label with the input */
+  margin-top: 8px; /* Adjust as needed */
+}
+
+
+.search-instructor-container {
+  display: flex;
+  align-items: center; /* Vertically center items */
+  margin-bottom: 20px; /* Adjust as needed */
+}
+
+.search-container {
+  margin-right: 20px; /* Adjust as needed */
+}
+
+.search-container input[type="text"] {
+  width: 200px; /* Adjust the width as needed */
+}
+    </style>
+
+ 
+    <link rel="stylesheet" type="text/css" href="static/css/getstarted.css">
+
+
+</head>
+<body>
+        
+            <!-- Sidebar -->
+<div class="w3-sidebar w3-brown w3-bar-block" style="width:18%">
+    <h3 class="w3-bar-item">Menu</h3>
+    <a class="w3-bar-item" href="{% url 'admindash' %}">Get Started</a>
+    <a class="w3-bar-item" href="{% url 'addInstructors' %}">Add Teachers</a>
+    <a class="w3-bar-item" href="{% url 'addRooms' %}">Add Rooms</a>
+    <a class="w3-bar-item" href="{% url 'addTimings' %}">Add Timings</a>
+    <a class="w3-bar-item" href="{% url 'addCourses' %}">Add Courses</a>
+    <a class="w3-bar-item" href="{% url 'addDepts' %}">Add Departments</a>
+    <a class="w3-bar-item" href="{% url 'addSections' %}">Add Sections</a>
+    <a class="w3-bar-item" href="{% url 'generate' %}">Generate Timetable</a>
+ 
+  </div>
+  
+  <!-- Page Content -->
+  <div style="margin-left:18%">
+  
+  <div class="w3-container w3-grey">
+    <h1><a href="{% url 'index' %}" class="logo">Automatic Course Scheduler</a></h1>
+    <div class="changepass">
+        <a class="w3-bar-item" href="{% url 'password_change' %}">Change Password</a>
+    </div>
+
+    <div class="logoutbtn">
+        <a class="w3-bar-item" href="{% url 'logout' %}">Logout</a>
+      </div>
+    
+                  
+  </div>
+                 <script type="text/javascript">
+
+        var checkList = document.getElementById('list1');
+        var items = document.getElementById('items');
+        checkList.getElementsByClassName('anchor')[0].onclick = function (evt) {
+            if (items.classList.contains('visible')){
+                items.classList.remove('visible');
+                items.style.display = "none";
+            }
+
+            else{
+                items.classList.add('visible');
+                items.style.display = "block";
+            }
+
+
+        }
+
+        items.onblur = function(evt) {
+            items.classList.remove('visible');
+        }
+    </script>
+                </div>
+            </nav>
+        </header>
+        {% block content %}
+{% load static %}
+        <br><br>
+        <h2>Add Courses</h2>
+        <h5>Please use the following form to enter the Courses into the system for timetable generation</h5>
+        <form method="post">
+          {% csrf_token %}
+          <fieldset>
+              <div class="tabcontent" id="new">
+                  <p>
+                      <label for="id_course_number">Course ID:</label>
+                      <input type="text" name="course_number" maxlength="5" required id="id_course_number">
+                  </p>
+                  <p>
+                      <label for="id_course_name">Course Name:</label>
+                      <input type="text" name="course_name" maxlength="40" required id="id_course_name">
+                  </p>
+                  <p>
+                      <label for="id_max_numb_students">Course Capacity:</label>
+                      <input type="text" name="max_numb_students" maxlength="65" required id="id_max_numb_students">
+                  </p>
+                  <!-- Instructor field is excluded from the form -->
+              </div>
+
+              <div class="search-instructor-container">
+                <label for="id_select_instructor">Select Instructor:</label>
+                <div class="search-container">
+                    <input type="text" id="instructorSearch" placeholder="Search for instructors">
+                    <i class="fa fa-search search-icon" aria-hidden="true"></i>
+                </div>
+            </div>
+            <p class="no-results">No results found.</p>
+              <div class="checkbox-container">
+                {% for instructor in form.instructors %}
+                    <div class="checkbox-item">
+                        {{ instructor.tag }}
+                        {{ instructor.choice_label }}
+                    </div>
+                {% endfor %}
+            </div>
+            <a href="{% url 'editcourse' %}"><h1 class="submit" onclick="openPage('edit')">View / Edit Courses</h1></a><input type="submit" value="Add Courses" class="submit">
+          </div>
+          </fieldset>
+
+
+
+  
+<footer class="container">
+  <p>&copy; Automatic Course Scheduler. All Rights Reserved</p>
+</footer>
+</form>
+
+<script>
+  // JavaScript to implement search functionality
+  document.getElementById("instructorSearch").addEventListener("keyup", function() {
+      var input, filter, checkboxContainer, checkboxItems, i, txtValue;
+      input = document.getElementById("instructorSearch");
+      filter = input.value.toUpperCase();
+      checkboxContainer = document.getElementsByClassName("checkbox-container")[0];
+      checkboxItems = checkboxContainer.getElementsByClassName("checkbox-item");
+      var noResultsMessage = document.querySelector(".no-results");
+      var found = false;
+      for (i = 0; i < checkboxItems.length; i++) {
+          txtValue = checkboxItems[i].textContent || checkboxItems[i].innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              checkboxItems[i].style.display = "";
+              found = true;
+          } else {
+              checkboxItems[i].style.display = "none";
+          }
+      }
+      if (!found && filter !== "") {
+          noResultsMessage.style.display = "block";
+      } else {
+          noResultsMessage.style.display = "none";
+      }
+  });
+
+  // Hide "No results found" message initially
+  document.addEventListener("DOMContentLoaded", function() {
+      document.querySelector(".no-results").style.display = "none";
+  });
+</script>
+
+
+</body>
+
+</html>
+
+{% endblock %}

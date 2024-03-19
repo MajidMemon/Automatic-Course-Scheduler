@@ -1,0 +1,63 @@
+<style>
+  /* Add this CSS to your stylesheet */
+.register-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.register-container h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.register-container p {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.register-container a {
+  color: #4682b4; /* Blue */
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.register-container a:hover {
+  color: #357abd; /* Darker blue */
+}
+
+.submit-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4682b4; /* Blue */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #357abd; /* Darker blue */
+}
+
+</style>
+{% extends "base.html" %}
+
+{% block title %}ACS | Register{% endblock %}
+
+{% block content %}
+<div class="register-container">
+  <h1>Create an account</h1>
+  <p class="login-link">Already have an account? <a href="{% url 'login' %}">Log in here</a></p>
+  <form method="post">
+    {{ user_form.as_p }}
+    {% csrf_token %}
+    <p><input type="submit" value="Create my account" class="submit-button"></p>
+  </form>
+</div>
+{% endblock %}

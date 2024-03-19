@@ -1,0 +1,119 @@
+<!-- conflict_detection_result.html -->
+<!DOCTYPE html>
+<html lang="en">
+{% load static%}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conflict Detection Result</title>
+    <style>
+        .back-btn {
+            display: inline-block;
+            padding: 10px;
+            background-color: #ff0000; /* Red background color */
+            color: #fff; /* White text color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none; /* Remove default underline */
+          }
+          .back-btn i {
+            margin-right: 5px;
+          }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        h2 {
+            color: #333;
+            text-align: center;
+        }
+
+        .conflict {
+            border: 5px solid #958080;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 40px;
+            background-color: #f8d7da;
+            transition: background-color 0.3s ease;
+        }
+        .conflict:hover {
+            background-color: #ff004a;
+        }
+        .conflict-type {
+            font-size: 18px;
+            color: #000000;
+            margin-bottom: 10px;
+        }
+
+        .conflict-detail p {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+
+        .summary {
+            margin-top: 20px;
+        }
+
+        .summary p {
+            margin-bottom: 10px;
+        }
+
+        .no-conflict {
+            text-align: center;
+            color: #007bff;
+        }
+
+        @media screen and (max-width: 600px) {
+            .container {
+                margin: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="{% url 'test_schedule' %}" class="back-btn">
+        <i class="fas fa-arrow-left"></i> Back
+      </a>
+
+    <div class="container">
+        <h2>Conflict Detection Result</h2>
+        {% if conflicts %}
+            <p><strong>Conflicts Detected:</strong></p>
+            {% for conflict in conflicts %}
+                <div class="conflict">
+                    <p class="conflict-type">Conflict Type: {{ conflict.2 }}</p>
+                    <div class="conflict-detail">
+                        <p><strong>Details:</strong></p>
+                        <p>{{ conflict.3 }}</p>
+                        <p>{{ conflict.4 }}</p>
+                        <p>{{ conflict.5 }}</p>
+                        <p>{{ conflict.6 }}</p>
+                        <p>{{ conflict.7 }}</p>
+                        <p>{{ conflict.8 }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+            <div class="summary">
+                <p><strong>Summary:</strong></p>
+                <p>{{ summary }}</p>
+            </div>
+        {% else %}
+            <p class="no-conflict">No conflicts detected in the schedule.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

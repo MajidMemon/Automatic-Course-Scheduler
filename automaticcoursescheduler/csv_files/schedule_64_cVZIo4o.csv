@@ -1,0 +1,53 @@
+Serial No,Course Code,Course Name,ClassRoom,Instructor,Class Timing
+0,CS446,Cloud Computing,504,Dr P,11:45 - 2:45 Saturday
+1,CS452,Introduction to Computer Security,501,Dr Sheeraz Mohani,6:30 - 9:30 Friday
+2,CS455,Logic Programming,303,Dr P,3:00 - 6:00 Sunday
+3,CS464,Numerical Analysis and Computing,203,Dr Hamid Sheikh,3:00 - 6:00 Wednesday
+4,CS471,Introduction to Artificial Intelligence,402,Dr Syed Kaif Ali,3:00 - 6:00 Wednesday
+5,CS473,Artificial Neural Networks,101,Dr Aarij,8:30 - 11:30 Saturday
+6,CS478,Introduction to Deep Learning,601,Sir Syed Saiq,3:00 - 6:00 Friday
+7,CS480,Introduction to Opitmization,402,Sir Daud Abbasi,6:30 - 9:30 Sunday
+8,CS481,Introduction to Mobile Programming,402,Dr Taha,11:45 - 2:45 Saturday
+9,CS485,Game Programming,602,Mam Madiha Munaf,6:30 - 9:30 Saturday
+10,CS486,Virtual Reality,601,Dr Hamid Sheikh,8:30 - 11:30 Thursday
+11,CS488,Introduction to Internet of Things,501,Mam Madiha Munaf,3:00 - 6:00 Tuesday
+12,CS490,Capstone Project,305,Sir Ali Raza,8:30 - 11:30 Sunday
+13,CS497,Topics in Computer Science,605,Dr Atiya Masood,11:45 - 2:45 Wednesday
+14,CS498,Individual Study in Computer Science,402,Dr Yasoob Mughal,6:30 - 9:30 Monday
+15,CS499,Independent Research in Computer Science,303,Sir Haris Khattak,6:30 - 9:30 Saturday
+16,CS490,Capstone Project,605,Dr Atiya Masood,6:30 - 9:30 Tuesday
+17,CS497,Topics in Computer Science,304,Sir Daniyal Nawaz,3:00 - 6:00 Wednesday
+18,CS498,Individual Study in Computer Science,505,Dr Yasoob Mughal,6:30 - 9:30 Friday
+19,CS499,Independent Research in Computer Science,103,Sir Daniyal Nawaz,3:00 - 6:00 Friday
+20,CS500,Research Preperation in Computer Science,203,Dr.Ahad Abro,6:30 - 9:30 Monday
+21,CS511,Introduction to Bioinformatics,504,Mam Beenish Ahmed,11:45 - 2:45 Wednesday
+22,CS512,Introduction to Data Mining,302,Sir Qasim,3:00 - 6:00 Tuesday
+23,CS513,Analysis and Intractability of Algorith,601,Dr Sheeraz Mohani,11:45 - 2:45 Friday
+24,CS535,Introduction to Computer Graphics,105,Dr b,11:45 - 2:45 Thursday
+25,CS536,Introduction to 3D Game Graphics,605,Dr P,3:00 - 6:00 Wednesday
+26,CS537,Data Communication and Computer Networks,406,Dr Taha,8:30 - 11:30 Friday
+27,CS538,Cryptography and Network Security,305,Sir Syed Saiq,8:30 - 11:30 Saturday
+28,CS551,Advanced Programming Languages,501,Sir Ali Raza,11:45 - 2:45 Saturday
+29,CS553,Compilers,202,Sir Israr Ali,3:00 - 6:00 Sunday
+30,CS575,Machine Learning,106,Dr Sheeraz Mohani,3:00 - 6:00 Tuesday
+31,CS612,Data Mining in Bioinformatics,403,Dr u,6:30 - 9:30 Tuesday
+32,CS105,Computational Thinking (B4),605,Sir Asif Ali,8:30 - 11:30 Wednesday
+33,CS105,Computational Thinking (B4),105,Sir Asif Ali,6:30 - 9:30 Sunday
+34,CS110,Foundations of Data Science,106,Dr Aarij,6:30 - 9:30 Wednesday
+35,CS110,Foundations of Data Science,104,Dr Kamran Raza,6:30 - 9:30 Sunday
+36,CS200,Selected Topics in Computing,605,Mam Beenish Ahmed,6:30 - 9:30 Thursday
+37,CS200,Selected Topics in Computing,506,Sir Asif Ali,3:00 - 6:00 Tuesday
+38,CS211,Computer Science II (required),402,Dr Mansoor,8:30 - 11:30 Wednesday
+39,CS211,Computer Science II (required),602,Dr Aarij,11:45 - 2:45 Saturday
+40,CS231,Assembly Language and Digital Circuits (,604,Sir Asif Ali,8:30 - 11:30 Thursday
+41,CS231,Assembly Language and Digital Circuits (,305,Sir Asif Ali,3:00 - 6:00 Sunday
+42,CS301,Computer Mastery (BB) (Not for CS majors,305,Dr Ali Aziz,8:30 - 11:30 Thursday
+43,CS301,Computer Mastery (BB) (Not for CS majors,601,Mam Sophia Ajaz,6:30 - 9:30 Wednesday
+44,CS302,Algorithmic Justice,404,Mam Sophia Ajaz,11:45 - 2:45 Monday
+45,CS302,Algorithmic Justice,604,Dr Ali Aziz,11:45 - 2:45 Friday
+46,CS305,Problem Solving with Java Programming (,402,Sir Qasim,11:45 - 2:45 Tuesday
+47,CS305,Problem Solving with Java Programming (,305,Dr Kamran Raza,6:30 - 9:30 Saturday
+48,CS306,Introduction to Computer Animation,206,Syed Zain Mir,11:45 - 2:45 Tuesday
+49,CS306,Introduction to Computer Animation,305,Dr Syed Hasan Adil,6:30 - 9:30 Monday
+50,CSC-2,Python,501,Dr Aarij,3:00 - 6:00 Thursday
+51,CSC-2,Python,605,Dr Aarij,8:30 - 11:30 Sunday

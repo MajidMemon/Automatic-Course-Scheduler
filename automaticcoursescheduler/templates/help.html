@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Webpage Design</title>
+    
+</head>
+<style> 
+    {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .main{
+        width: 100%;
+        background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%);
+        background-position: center;
+        background-size: cover;
+        height: 200vh;
+    }
+
+    .main1{
+        width: 100%;
+        background-color: #87b0e1a1; /* Light gray */
+        background-position: center;
+        background-size: cover;
+        height: 20vh;
+    }
+
+
+    .navbar{
+        width: 1200px;
+        height: 75px;
+        margin: auto;
+    }
+    
+    .icon{
+        width: 300px;
+        float: left;
+        height: 70px;
+    }
+    
+    .logo{
+        color: #ff7200;
+        font-size: 30px;
+        font-family: Arial;
+        padding-left: 20px;
+        float: left;
+        padding-top: 10px;
+        margin-top: 5px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        
+    }
+    
+    .menu{
+        width: 900px;
+        float: left;
+        height: 60px;
+    }
+    
+    ul{
+        float: left;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    ul li{
+        list-style: none;
+        margin-left: 62px;
+        margin-top: 27px;
+        font-size: 14px;
+    }
+    
+    ul li a{
+        text-decoration: none;
+        color: #fff;
+        font-family: Arial;
+        font-weight: bold;
+        transition: 0.4s ease-in-out;
+    }
+    
+    ul li a:hover{
+        color: #ff7200;
+    }
+    
+    
+    .btn{
+        width: 100px;
+        height: 40px;
+        background: #ff7200;
+        border: 2px solid #ff7200;
+        margin-top: 13px;
+        color: #fff;
+        font-size: 15px;
+        border-bottom-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        transition: 0.2s ease;
+        cursor: pointer;
+    }
+    .btn:hover{
+        color: #000;
+    }
+    
+    .btn:focus{
+        outline: none;
+    }
+    
+    .srch:focus{
+        outline: none;
+    }
+    
+    .content{
+        width: 1200px;
+        height: auto;
+        margin: auto;
+        color: #fff;
+        position: relative;
+    }
+    
+    .content .par{
+        padding-left: 20px;
+        padding-bottom: 25px;
+        font-family: Arial;
+        letter-spacing: 1.2px;
+        line-height: 30px;
+    }
+    
+    .content h1{
+        font-family: 'Times New Roman';
+        font-size: 50px;
+        padding-left: 20px;
+        margin-top: 9%;
+        letter-spacing: 2px;
+    }
+    
+    .content .cn{
+        width: 200px;
+        height: 40px;
+        background: #ff7200;
+        border: none;
+        margin-bottom: 10px;
+        margin-left: 20px;
+        font-size: 18px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: .4s ease;
+        
+    }
+    
+    .content .cn a{
+        text-decoration: none;
+        color: #000;
+        transition: .3s ease;
+    }
+    
+    .cn:hover{
+        background-color: #fff;
+    }
+    
+    .content span{
+        color: #ff7200;
+        font-size: 65px
+    }
+    
+    .form{
+        width: 250px;
+        height: 380px;
+        background: linear-gradient(to top, rgba(0,0,0,0.8)50%,rgba(0,0,0,0.8)50%);
+        position: absolute;
+        top: -20px;
+        left: 870px;
+        transform: translate(0%,-5%);
+        border-radius: 10px;
+        padding: 25px;
+    }
+    
+    .form h2{
+        width: 220px;
+        font-family: sans-serif;
+        text-align: center;
+        color: #ff7200;
+        font-size: 22px;
+        background-color: #fff;
+        border-radius: 10px;
+        margin: 2px;
+        padding: 8px;
+    }
+    .help-boxes {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .help-box {
+        width: 250px;
+        height: 120px;
+        margin: 10px;
+        padding: 15px;
+        background-color: #f8f9fa;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        border: 2px solid transparent;
+    }
+    
+    .help-box p {
+        font-size: 20px;
+        color: #333;
+    }
+    
+    .box1 { border-color: #ff5722; }
+    .box2 { border-color: #4caf50; }
+    .box3 { border-color: #2196f3; }
+    .box4 { border-color: #ff9800; }
+    .box5 { border-color: #9c27b0; }
+    .box6 { border-color: #607d8b; }
+    .box7 { border-color: #e91e63; }
+    .box8 { border-color: #3f51b5; }
+    .box9 { border-color: #795548; }
+    
+    /* Different color padding */
+    .help-box p {
+        padding: 10px;
+        background-color: #f8f9fa;
+        border-radius: 5px;
+    }
+    a {
+        text-decoration: none;
+    }
+    
+</style>
+<body>
+    <div class="main1">
+        <div class="main">
+            <div class="navbar">
+                <div class="icon">
+                    <a href="{% url 'index' %}" class="logo">Automatic Course Scheduler</a>
+                
+                </div>
+
+                <div class="menu">
+                    <ul>
+                        <li><a href="{% url 'index' %}">Home</a></li>
+                        <li><a href="{% url 'about' %}">About-Us</a></li>
+                        <li><a href="{% url 'help' %}">Help</a></li>
+                        <li><a href="{% url 'contact' %}">Contact-Us</a></li>
+                        <li><a href="{% url 'login' %}">Login</a></li>
+                        <li><a href="{% url 'register' %}">Sign-Up</a></li>
+                    </ul>
+                </div>
+
+            
+            </div> 
+            <div class="content">
+                <h1>How to Generate a Schedule? <br><span>We Will Help</span> <br>Below We Have Written The Instruction To Generate a Schedule</h1>
+                <p class="par">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt neque 
+                    expedita atque eveniet <br> quis nesciunt. Quos nulla vero consequuntur, fugit nemo ad delectus 
+                    <br> a quae totam ipsa illum minus laudantium?</p>
+
+                    <button class="cn"><a href="{% url 'login' %}" role="button">Generate Timetable</a></button>
+
+ 
+
+
+    <div class="help-boxes">
+    <div class="help-box box1">
+        <p><strong>1. Log into the System using your account to start generating the timetable</strong></p>
+    </div>
+    <div class="help-box box2">
+        <p><strong>2. Input the Information for the Courses</strong></p>
+    </div>
+    <div class="help-box box3">
+        <p><strong>3. Input the Information for the Teachers</strong></p>
+    </div>
+    <div class="help-box box4">
+        <p><strong>4. Input the Information for the Rooms</strong></p>
+    </div>
+    <div class="help-box box5">
+        <p><strong>5. Input the Information for the Timings</strong></p>
+    </div>
+    <div class="help-box box6">
+        <p><strong>6. Input the Information for the Departments</strong></p>
+    </div>
+    <div class="help-box box7">
+        <p><strong>7. Input the Information for the Sections</strong></p>
+    </div>
+    <div class="help-box box8">
+        <p><strong>8. Click on Home and then Click on "Generate Timetable"</strong></p>
+    </div>
+    <div class="help-box box9">
+        <p><strong>9. The Timetable can then be downloaded as a PDF Document</strong></p>
+    </div>
+</div>
+    
+    
+            </div>
+</body>
+</html>

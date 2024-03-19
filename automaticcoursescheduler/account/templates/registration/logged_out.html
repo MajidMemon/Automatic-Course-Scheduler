@@ -1,0 +1,45 @@
+<style>
+  /* Add this CSS to your stylesheet */
+.logout-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.logout-container h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.logout-container p {
+  text-align: center;
+}
+
+.logout-container a {
+  color: #4682b4; /* Blue */
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.logout-container a:hover {
+  color: #357abd; /* Darker blue */
+}
+
+</style>
+{% extends "base.html" %}
+
+{% block title %}Logged out{% endblock %}
+
+{% block content %}
+  <div class="logout-container">
+    <h1>Logged out</h1>
+    <p>
+      You have been successfully logged out.
+      You can <a href="{% url 'login' %}" class="login-link">log-in again</a> or go back to the <a href="{% url 'index' %}" class="homepage-link">Homepage</a>.
+    </p>
+  </div>
+{% endblock %}

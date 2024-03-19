@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Test Schedule</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 80%;
+        margin: 50px auto;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+    }
+
+    h2 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 30px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+
+    input[type="file"] {
+        margin-bottom: 20px;
+        padding: 10px;
+        background-color: azure;
+        border: 2px solid #000000;
+        border-radius: 15px;
+        width: 100%;
+    }
+
+    button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    @media screen and (max-width: 768px) {
+        .container {
+            max-width: 90%;
+        }
+    }
+
+    img { 
+        margin-top: -150px;
+    }
+</style>
+</head>
+<body>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/getstarted.css' %}">
+<div class="container">
+
+    <a href="{% url 'admindash' %}" class="logo">
+        <img src="{% static 'img/logomain.png' %}" alt="Automatic Course Scheduler Logo">
+    </a>
+
+    <h2>Test Schedule CSV File</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Test Schedule</button>
+    </form>
+</div>
+
+</body>
+</html>

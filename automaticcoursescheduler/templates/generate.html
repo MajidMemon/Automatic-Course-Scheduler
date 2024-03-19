@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<title>Generate Schedule</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+
+  .button-container {
+    text-align: center;
+    margin-top: 20px; /* Adjust as needed */
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff; /* Primary button color */
+    color: #fff; /* Button text color */
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background-color 0.3s;
+  }
+  
+  .btn:hover {
+    background-color: #0056b3; /* Darker shade of primary color on hover */
+  }
+  
+
+.container {
+  background-color: #ebeae8;
+  padding: 0.01em 16px;
+  margin-bottom: 10px;
+  
+}
+.help-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.help-box {
+  width: 250px;
+  height: 500pxpx;
+  margin: 10px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border: 2px solid transparent;
+}
+
+.help-box p {
+  font-size: 20px;
+  color: #333;
+}
+
+.box1 { border-color: #ff5722; }
+.box2 { border-color: #4caf50; }
+.box3 { border-color: #2196f3; }
+.box4 { border-color: #ff9800; }
+.box5 { border-color: #9c27b0; }
+.box6 { border-color: #607d8b; }
+.box7 { border-color: #e91e63; }
+.box8 { border-color: #3f51b5; }
+.box9 { border-color: #795548; }
+
+/* Different color padding */
+.help-box p {
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+}
+a {
+  text-decoration: none;
+}
+
+
+
+</style>
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/getstarted.css' %}">
+<body>
+
+<!-- Sidebar -->
+<div class="w3-sidebar w3-brown w3-bar-block" style="width:18%">
+  <h3 class="w3-bar-item">Menu</h3>
+  <a class="w3-bar-item" href="{% url 'admindash' %}">Get Started</a>
+  <a class="w3-bar-item" href="{% url 'addInstructors' %}">Add Teachers</a>
+  <a class="w3-bar-item" href="{% url 'addRooms' %}">Add Rooms</a>
+  <a class="w3-bar-item" href="{% url 'addTimings' %}">Add Timings</a>
+  <a class="w3-bar-item" href="{% url 'addCourses' %}">Add Courses</a>
+  <a class="w3-bar-item" href="{% url 'addDepts' %}">Add Departments</a>
+  <a class="w3-bar-item" href="{% url 'addSections' %}">Add Sections</a>
+  <a class="w3-bar-item" href="{% url 'generate' %}">Generate Timetable</a>
+
+
+</div>
+
+<!-- Page Content -->
+<div style="margin-left:18%">
+
+  <div class="w3-container w3-grey">
+    <h1><a href="{% url 'index' %}" class="logo">Automatic Course Scheduler</a></h1>
+    <div class="changepass">
+        <a class="w3-bar-item" href="{% url 'password_change' %}">Change Password</a>
+    </div>
+
+    <div class="logoutbtn">
+        <a class="w3-bar-item" href="{% url 'logout' %}">Logout</a>
+      </div>
+
+                
+</div>
+
+         <main role="main">
+
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="display-4">Automatic Course Scheduler | Generate Timetable</h1>
+      <p>Please make sure you have entered the correct information for the Teachers, Rooms, Timings, Courses, Sections and Departments
+        into the system. If you have not entered all the information yet please refer below on how to go about feeding all the information into the system.
+          Once confirmed please click on the "Generate Timetable" button below and wait patiently as Automatic Course Scheduler generates your timetable for you.</p>
+      <p><a href="{% url 'timetable' %}" class="btn btn-primary btn-lg">Generate Timetable&raquo;</a>
+    </div>
+  </div>
+  <div class="help-boxes">
+    <div class="help-box box1">
+      <h2><a href="{% url 'addInstructors' %}">1. Add Teacher</a></h2>
+      <p>Navigate to the "Add Teachers" section and add the corresponding details. Incorrect details can also be removed via the "Edit Teacher" option.</p>
+    </div>
+    <div class="help-box box2">
+      <h2><a href="{% url 'addRooms' %}">2. Add Room</a></h2>
+      <p>Navigate to the "Add Rooms" section and add the corresponding details. Incorrect details can also be removed via the "Edit Rooms" option.</p>
+    </div>
+    <div class="help-box box3">
+      <h2><a href="{% url 'addTimings' %}">3. Add Timings</a></h2>
+      <p>Navigate to the "Add Timings" section and add the corresponding details. Incorrect details can also be removed via the "Edit Timings" option.</p>
+    </div>
+    <div class="help-box box4">
+      <h2><a href="{% url 'addCourses' %}">4. Add Course</a></h2>
+      <p>Navigate to the "Add Courses" section and add the corresponding details. Incorrect details can also be removed via the "Edit Courses" option.</p>
+    </div>
+    <div class="help-box box5">
+      <h2><a href="{% url 'addDepts' %}">5. Add Department</a></h2>
+      <p>Navigate to the "Add Departments" section and add the corresponding details. Incorrect details can also be removed via the "Edit Departments" option.</p>
+    </div>
+    <div class="help-box box6">
+      <h2><a href="{% url 'addSections' %}">6. Add Section</a></h2>
+      <p>Navigate to the "Add Sections" section and add the corresponding details. Incorrect details can also be removed via the "Edit Sections" option.</p>
+    </div>
+    <div class="help-box box7">
+      <h2><a href="{% url 'generate' %}">7. Generate Timetable</a></h2>
+      <p>Navigate to the "Generate Timetable" section and click on Generate Timetable and wait patiently as our algorithm works its magic.</p>
+    </div>
+    <div class="help-box box8">
+      <h2><a href="{% url 'upload_schedule' %}">8. Upload Schedule</a></h2>
+      <p>After generating the schedule make sure to download it as pdf through download_as_PDF button on schedule generated page and then upload your schedule to save in database on upload your schedule page.</p>
+    </div>
+    <div class="help-box box9">
+      <h2><a href="{% url 'test_schedule' %}">9. Test Your Schedule</a></h2>
+      <p>After generating the schedule make sure to download it as csv through download_as_CSV button on schedule generated page and then upload your schedule to Test your schedule and find conflicts in it.</p>
+    </div>
+  </div>
+  
+</main>
+
+<footer class="container">
+  <p>&copy; Automatic Course Scheduler. All Rights Reserved</p>
+</footer>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="../assets/dist/js/bootstrap.bundle.js"></script>
+
+    </form>
+</body>
+</html>

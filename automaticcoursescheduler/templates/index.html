@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<style>
+    /* Reset CSS */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* Global Styles */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        color: #333;
+    }
+
+    /* Header Styles */
+    header {
+        background-color: #008080;
+        padding: 10px 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar {
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .logo img {
+        width: 150px;
+    }
+
+    .menu {
+        list-style-type: none;
+        display: flex;
+    }
+
+    .menu li {
+        margin-left: 20px;
+    }
+
+    .menu li a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+    }
+
+    /* Main Sections Styles */
+    section {
+        padding: 50px 0;
+        text-align: center;
+    }
+
+    h2.section-title {
+        margin-bottom: 30px;
+        color: #333;
+        font-size: 24px;
+    }
+
+    /* Welcome Section Styles */
+    .welcome {
+        background-color: #f7f7f7;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .welcome-text {
+        flex: 1;
+        padding: 0 20px;
+        text-align: left;
+    }
+
+    .welcome-text h1 {
+        font-size: 36px;
+        color: #333333;
+        margin-bottom: 20px;
+    }
+
+    .welcome-text p {
+        color: #333333;
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    .welcome-text a {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #fff;
+        color: #333333;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .welcome-text a:hover {
+        background-color: #ccc;
+    }
+    .calendar-img img {
+        max-width: 100%;
+        max-height: 100%;
+        width: 70%; /* Ensure the image fills the container width */
+        height: auto; /* Allow the image to adjust its height proportionally */
+        object-fit: contain; /* Maintain the image's aspect ratio while fitting within the container */
+    }
+    /* Services Section Styles */
+    .services {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .service-box {
+        flex: 1;
+        margin: 20px;
+        padding: 20px;
+        background-color: #7ebdb4;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-box h2 {
+        color: #fff;
+        margin-bottom: 15px;
+    }
+
+    .service-box p {
+        color: #fff;
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    /* Clients Section Styles */
+    .clients {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .client-box {
+        flex: 1;
+        margin: 20px;
+        padding: 20px;
+        background-color: #9c89b8;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .client-box img {
+        width: 100px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+    }
+
+    .client-box h3 {
+        color: #fff;
+        margin-bottom: 10px;
+    }
+
+    .client-box p {
+        color: #fff;
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    /* Key Points Section Styles */
+    .keypoints {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .keypoint-box {
+        flex: 1;
+        margin: 20px;
+        padding: 20px;
+        background-color: #f39237;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .keypoint-box h2 {
+        color: #fff;
+        margin-bottom: 15px;
+    }
+
+    .keypoint-box p {
+        color: #fff;
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+</style>
+<body>
+
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="{% url 'index' %}">
+                <img src="{% static 'img/logomain.png' %}" alt="Logo">
+            </a>
+        </div>
+        <ul class="menu">
+            <li><a href="{% url 'index' %}"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="{% url 'about' %}"><i class="fas fa-info-circle"></i> About Us</a></li>
+            <li><a href="{% url 'help' %}"><i class="fas fa-question-circle"></i> Help</a></li>
+            <li><a href="{% url 'contact' %}"><i class="fas fa-envelope"></i> Contact Us</a></li>
+            <li><a href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+            <li><a href="{% url 'register' %}"><i class="fas fa-user-plus"></i> Sign-Up</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="welcome">
+    <div class="welcome-text">
+        <h1>Welcome to Our Automatic Course Scheduling System</h1>
+        <p>Effortlessly plan your university schedule with our advanced AI-powered course scheduler. Say goodbye to conflicts and hello to efficient scheduling!</p>
+        <a href="{% url 'login' %}" class="btn">Login to Start Scheduling</a>
+    </div>
+    <div class="calendar-img">
+        <img src="{% static 'img/homepageimg.jpg' %}" alt="Calendar">
+    </div>
+</section>
+
+<section class="services">
+    <h2 class="section-title">Our Services</h2>
+    <div class="service-box">
+        <h2>Efficient Scheduling</h2>
+        <p>Our AI algorithm ensures efficient allocation of course timings, maximizing productivity.</p>
+    </div>
+    <div class="service-box">
+        <h2>Conflict Resolution</h2>
+        <p>Stay informed with real-time updates and notifications regarding any changes or conflicts in your course schedule.</p>
+    </div>
+    <div class="service-box">
+        <h2>User-Friendly Interface</h2>
+        <p>Our platform offers a simple and intuitive interface for easy navigation and scheduling.</p>
+    </div>
+    <div class="service-box">
+        <h2>Customization Options</h2>
+        <p>Personalize your schedule according to your preferences and requirements with customizable options.</p>
+    </div>
+</section>
+
+<section class="clients">
+    <h2 class="section-title">Our Clients</h2>
+    <!-- Repeat this client block for each client -->
+    <div class="client-box">
+        <img src="{% static 'img/meta.png' %}" alt="Meta">
+        <h3>Meta</h3>
+        <p>""Great experience overall. Will definitely be returning."</p>
+    </div>
+    <div class="client-box">
+        <img src="{% static 'img/microsoft.jpg' %}" alt="Microsoft">
+        <h3>Microsoft</h3>
+        <p>"Highly satisfied with the quality and value.."</p>
+    </div>
+    <!-- Add more client boxes as needed -->
+</section>
+
+<section class="keypoints">
+    <h2 class="section-title">Key Points</h2>
+    <!-- Repeat this keypoint block for each keypoint -->
+    <div class="keypoint-box">
+        <h2>Efficiency</h2>
+        <p>Our system ensures efficient allocation of course timings, maximizing your productivity.</p>
+    </div>
+    <div class="keypoint-box">
+        <h2>Real-Time Updates</h2>
+        <p>Stay informed with real-time updates and notifications regarding any changes or conflicts in your course schedule.</p>
+    </div>
+    <div class="keypoint-box">
+        <h2>User-Friendly Interface</h2>
+        <p>Our platform offers a simple and intuitive interface for easy navigation and scheduling.</p>
+    </div>
+    <div class="keypoint-box">
+        <h2>Customization Options</h2>
+        <p>Personalize your schedule according to your preferences and requirements with customizable options.</p>
+    </div>
+    <!-- Add more keypoint boxes as needed -->
+</section>
+
+<section class="faq">
+    <h2 class="section-title">FAQ</h2>
+    <div class="faq-item">
+        <h3>How do I get started with the scheduling system?</h3>
+        <p>Getting started is easy! Simply sign up for an account, provide your course preferences, and let our AI algorithm generate your schedule.</p>
+    </div>
+    <!-- Add more FAQ items as needed -->
+</section>
+
+<footer>
+    <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <div class="footer-text">
+        <p>&copy; 2024 Automatic Course Scheduling System. All Rights Reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>

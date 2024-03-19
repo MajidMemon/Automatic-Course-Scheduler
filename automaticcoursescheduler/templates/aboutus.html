@@ -1,0 +1,197 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>About Us</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/getstarted.css' %}">
+</head>
+<style> 
+    {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .navbar1 {
+        width: 100%;
+        background: #ffffb3;
+        height: 20vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /* Align logo and other navbar content */
+        padding: 0 20px; /* Add padding to the navbar edges */
+    }
+    
+    .icon {
+        height: 15%; /* Make the logo container full height of the navbar */
+    }
+    
+    .logo img {
+        padding: 5px;
+        margin-top: -80px;
+        height: 80%;
+        width: 150px; /* This will maintain the aspect ratio */
+        filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5)); /* Apply shadow to the image */
+    }
+    
+    
+    .menu {
+        width: 60%; /* Adjust the width as needed */
+        margin: 0 auto; /* Center the menu horizontally */
+        font-size: 20px; /* Adjust the font size of the menu items */
+    }
+    
+    ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        padding: 0;
+    }
+    
+    ul li {
+        margin: 0 15px; /* Adjust the spacing between menu items */
+    }
+    
+    ul li a {
+        text-decoration: none;
+        color: #000000;
+        font-family: Arial;
+        font-weight: bold;
+        transition: 0.2s ease-in-out;
+    }
+    
+    ul li a:hover {
+        color: #ff7200;
+    }
+
+    .content{
+        width: 1200px;
+        height: auto;
+        margin: auto;
+        color: #000000;
+        position: relative;
+        margin-top: -80px;
+    }
+    
+    .content .par{
+        padding-left: 20px;
+        padding-bottom: 25px;
+        font-family: Arial;
+        letter-spacing: 1.2px;
+        line-height: 30px;
+    }
+    
+    .content h1{
+        margin-left: 120px;
+        font-family: 'Times New Roman';
+        font-size: 50px;
+        padding-left: 20px;
+        margin-top: 9%;
+        letter-spacing: 2px;
+    }
+    
+    .content .cn{
+        width: 200px;
+        height: 40px;
+        background: #ff7200;
+        border: none;
+        margin-bottom: 10px;
+        margin-left: 20px;
+        font-size: 18px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: .4s ease;
+        
+    }
+    
+    .content .cn a{
+        text-decoration: none;
+        color: #000;
+        transition: .3s ease;
+    }
+    
+    .cn:hover{
+        background-color: #fff;
+    }
+    
+    .content span{
+        color: #ff7200;
+        font-size: 35px
+    }
+    
+    .textaboutus {
+        margin-left: 500px;
+        font-size: 80px;
+        color: #ff7200;
+        font-style: bold;
+        margin-top: 10vh;
+    }
+
+</style>
+<body>
+    <div class="navbar1">
+        <div class="icon">
+            <a href="{% url 'index' %}" class="logo">
+                <img src="{% static 'img/logomain.png' %}" alt="Automatic Course Scheduler Logo">
+            </a>
+        </div>
+      
+        <div class="menu">
+            <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About-Us</a></li>
+                <li><a href="{% url 'help' %}">Help</a></li>
+                <li><a href="{% url 'contact' %}">Contact-Us</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'register' %}">Sign-Up</a></li>
+            </ul>
+        </div>
+    </div>
+    <br><br>
+    <div class='textaboutus'>
+        <h1>About-Us</h1>
+    </div>
+        <div class="content">
+
+            <h1>Welcome to Automatic Course Scheduler </h1>
+            <p class="par"> A cutting-edge solution developed as part of our final year project for our computer science degree. Our project aims to revolutionize the way academic institutes manage their course scheduling process, offering a comprehensive platform powered by innovative technologies. <br><br><br>
+               <span>Our Mission
+            </span><br> At Automatic Course Scheduler, our mission is to simplify and optimize course scheduling for colleges and universities. We understand the challenges faced by academic institutions in efficiently managing their course timetables, and our project is dedicated to providing an intuitive, user-friendly solution that addresses these challenges effectively.
+            <br><br><br> <span>Leveraging Genetic Algorithms
+
+            </span><br> One of the core features of our project is the utilization of genetic algorithms to generate optimal course schedules. By leveraging the power of genetic algorithms, our system intelligently explores various scheduling possibilities, considering factors such as instructor availability, room capacity, and course requirements. This approach allows us to produce schedules that are not only efficient but also adaptable to the dynamic needs of academic institutions.
+            
+            <br><br><br> <span>Flexible Instructor Assignment
+
+            </span><br> Our project offers a flexible instructor assignment feature, enabling administrators to assign multiple instructors to a course while ensuring that only one instructor teaches the course during each meeting time. This flexibility allows institutions to leverage the diverse expertise of their faculty members and accommodate various teaching preferences while maintaining scheduling integrity and efficiency.           
+            
+            <br><br><br> <span>Streamlined Course Management
+
+            </span><br> With Automatic Course Scheduler, administrators can seamlessly manage all aspects of course scheduling, including adding courses, assigning instructors, setting meeting times, and allocating rooms. Our intuitive interface and advanced algorithms simplify the scheduling process, saving valuable time and resources for academic institutions.
+
+            <br><br><br> <span>Empowering Academic Institutes
+
+
+            </span><br> Our ultimate goal is to empower academic institutes with a powerful and adaptable solution for course scheduling. By automating and optimizing the scheduling process, we aim to enhance productivity, improve student satisfaction, and enable institutions to focus more on delivering quality education.           
+            
+            <br><br><br> <span>Join Us on Our Journey
+
+
+            </span><br> We are excited to embark on this journey to transform course scheduling for academic institutes. With our dedication to innovation and excellence, we strive to make Automatic Course Scheduler the go-to solution for institutions seeking efficient and effective course management. Join us as we revolutionize the way courses are scheduled in the academic world.
+
+
+            <br><br>
+            <h2>Start your course scheduling with us today!
+
+
+                <button class="cn"><a href="{% url 'login' %}" role="button">Generate Timetable</a></button>
+
+ 
+
+
+    
+    
+            </div>
+</body>
+</html>

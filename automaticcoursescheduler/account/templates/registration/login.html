@@ -1,0 +1,89 @@
+<style>
+  /* Add this CSS to your stylesheet */
+.login-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.error-message {
+  color: #ff6347; /* Red */
+}
+
+.info-message {
+  color: #4682b4; /* Blue */
+}
+
+.login-form form {
+  margin-top: 20px;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-form input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #4682b4; /* Blue */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-form input[type="submit"]:hover {
+  background-color: #357abd; /* Darker blue */
+}
+
+.login-form p {
+  margin-top: 10px;
+}
+
+.login-form a {
+  color: #4682b4; /* Blue */
+}
+
+</style>
+
+{% extends "base.html" %}
+
+{% block title %}Login Page{% endblock %}
+
+{% block content %}
+  <div class="login-container">
+    <h1>Login</h1>
+    {% if form.errors %}
+      <p class="error-message">
+        Your username and password didn't match.
+        Please try again.
+      </p>
+    {% else %}
+      <p class="info-message">Please, use the following form to log-in. If you don't have an account <a href="{% url "register" %}">register here</a></p>
+    {% endif %}
+    <div class="login-form">
+      <form action="{% url 'login' %}" method="post">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <input type="hidden" name="next" value="{{ next }}" />
+        <p><input type="submit" value="LOGIN"></p>
+      </form>
+      <p><a href="{% url 'password_reset' %}">Forgot your password?</a></p>
+    </div>
+  </div>
+{% endblock %}

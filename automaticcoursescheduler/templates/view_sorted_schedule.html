@@ -1,0 +1,70 @@
+<!-- view_schedule.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Schedule</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>View Schedule</h2>
+    <form id="sortForm">
+        <label for="sortKey">Sort by:</label>
+        <select id="sortKey" name="sortKey">
+            <option value="SerialNo">Serial No</option>
+            <option value="CourseCode">Course Code</option>
+            <option value="CourseName">Course Name</option>
+            <option value="ClassRoom">Class Room</option>
+            <option value="Instructor">Instructor</option>
+            <option value="ClassTiming">Class Timing</option>
+        </select>
+        <button type="submit">Sort</button>
+    </form>
+    <br>
+    <table id="scheduleTable">
+        <thead>
+            <tr>
+                <th>Serial No</th>
+                <th>Course Code</th>
+                <th>Course Name</th>
+                <th>Class Room</th>
+                <th>Instructor</th>
+                <th>Class Timing</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in schedule_data %}
+            <tr>
+                <td>{{ row.SerialNo }}</td>
+                <td>{{ row.CourseCode }}</td>
+                <td>{{ row.CourseName }}</td>
+                <td>{{ row.ClassRoom }}</td>
+                <td>{{ row.Instructor }}</td>
+                <td>{{ row.ClassTiming }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+<script>
+    document.getElementById('sortForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        var sortKey = document.getElementById('sortKey').value;
+        window.location.href = '/view/?sort=' + sortKey;
+    });
+</script>
+</html>

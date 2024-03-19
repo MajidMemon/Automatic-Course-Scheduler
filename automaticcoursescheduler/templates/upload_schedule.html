@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/getstarted.css' %}">
+<html>
+<title>Upload Schedule</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+.button-container {
+  display: flex;
+  spacing: 5px;
+  align-items: center; /* Align items vertically in the center */
+}
+.container {
+  background-color: #ebeae8;
+  padding: 0.01em 16px;
+  margin-bottom: 10px;
+  
+}
+.help-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.help-box {
+  width: 250px;
+  height: 500pxpx;
+  margin: 10px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border: 2px solid transparent;
+}
+
+.help-box p {
+  font-size: 20px;
+  color: #333;
+}
+
+.box1 { border-color: #ff5722; }
+.box2 { border-color: #4caf50; }
+.box3 { border-color: #2196f3; }
+.box4 { border-color: #ff9800; }
+.box5 { border-color: #9c27b0; }
+.box6 { border-color: #607d8b; }
+.box7 { border-color: #e91e63; }
+.box8 { border-color: #3f51b5; }
+.box9 { border-color: #795548; }
+
+/* Different color padding */
+.help-box p {
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+}
+a {
+  text-decoration: none;
+}
+
+
+.upload-button {
+  margin-left: 30px;
+  background-color: skyblue;
+  border: none;
+  color: white;
+  padding: 8px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+.upload-button:hover {
+  background-color: #4CAF50;
+}
+
+.uploadbtn {
+    margin-top: 20px;
+    margin-left: 250px;
+}
+
+.showupload {
+    margin-top: 40px;
+    margin-left: 100px;
+}
+
+
+.listofschedule {
+    background: grey;
+    padding: 1.0rem;
+    width: 500px;
+    margin-bottom: 20px;
+}
+
+</style>
+
+<body>
+
+<!-- Sidebar -->
+<div class="w3-sidebar w3-brown w3-bar-block" style="width:18%">
+  <h3 class="w3-bar-item">Menu</h3>
+  <a class="w3-bar-item" href="{% url 'admindash' %}">Get Started</a>
+  <a class="w3-bar-item" href="{% url 'addInstructors' %}">Add Teachers</a>
+  <a class="w3-bar-item" href="{% url 'addRooms' %}">Add Rooms</a>
+  <a class="w3-bar-item" href="{% url 'addTimings' %}">Add Timings</a>
+  <a class="w3-bar-item" href="{% url 'addCourses' %}">Add Courses</a>
+  <a class="w3-bar-item" href="{% url 'addDepts' %}">Add Departments</a>
+  <a class="w3-bar-item" href="{% url 'addSections' %}">Add Sections</a>
+  <a class="w3-bar-item" href="{% url 'generate' %}">Generate Timetable</a>
+  <a class="w3-bar-item" href="{% url 'upload_schedule' %}">Upload Schedule</a>
+
+
+</div>
+
+<!-- Page Content -->
+<div style="margin-left:18%">
+
+  <div class="w3-container w3-grey">
+    <h1><a href="{% url 'index' %}" class="logo">Automatic Course Scheduler</a></h1>
+    <div class="changepass">
+        <a class="w3-bar-item" href="{% url 'password_change' %}">Change Password</a>
+    </div>
+
+    <div class="logoutbtn">
+        <a class="w3-bar-item" href="{% url 'logout' %}">Logout</a>
+      </div>
+
+                
+</div>
+
+
+<div class="w3-container">
+  <div class="container">
+    <h1 class="display-4">{{ user.first_name }}! Here you can upload new schedules and view the old one as well.<br> Automatic Course Scheduler. </h1>
+    
+    <br>
+    <div class="button-container">
+      <a class="btn btn-primary btn-lg" href="{% url 'addInstructors' %}" role="button">Get Started &raquo;</a>
+      
+      <a href="{% url 'upload_schedule' %}" class="upload-button">Upload Previous Schedule</a>
+      
+  </div>
+  
+  </div>
+</div>
+
+
+        <!-- Upload Form -->
+    <div class="uploadbtn">
+        <h1>Upload Schedule</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="file" name="pdf_file" accept=".pdf" required>
+            <button type="submit">Upload Schedule</button>
+        </form>
+    </div>
+    <div class="showupload">  <!-- Display Uploaded Schedules -->
+        <h2>Uploaded Schedules:</h2>
+        <div class="listofschedule">
+            <ul>
+                {% for schedule in all_schedules %}
+                    <li><a href="{% url 'view_pdf' schedule.id %}" target="_blank">{{ schedule.pdf_file.name }}</a></li>
+                {% empty %}
+                    <li>No schedules uploaded yet.</li>
+                {% endfor %}
+            </ul>
+    </div>
+    </div>
+<footer class="container">
+  <p>&copy; Automatic Course Scheduler. All Rights Reserved</p>
+</footer>
+</body>
+</html>
