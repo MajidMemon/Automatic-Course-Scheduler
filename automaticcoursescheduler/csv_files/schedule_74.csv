@@ -1,0 +1,60 @@
+Serial No,Course Code,Course Name,ClassRoom,Instructor,Class Timing
+
+Serial No,Course Code,Course Name,ClassRoom,Instructor,Class Timing
+
+0,CS446,Cloud Computing,306,Dr O,8:30 - 11:30 Sunday
+1,CS452,Introduction to Computer Security,103,Mam Saira Khurram,6:30 - 9:30 Friday
+2,CS455,Logic Programming,104,Dr u,11:45 - 2:45 Friday
+3,CS464,Numerical Analysis and Computing,401,Dr Syed Kaif Ali,3:00 - 6:00 Friday
+4,CS471,Introduction to Artificial Intelligence,404,Dr Hamid Sheikh,11:45 - 2:45 Thursday
+5,CS473,Artificial Neural Networks,406,Dr Aarij,3:00 - 6:00 Monday
+6,CS478,Introduction to Deep Learning,305,Sir Syed Saiq,11:45 - 2:45 Monday
+7,CS480,Introduction to Opitmization,504,Sir Daud Abbasi,6:30 - 9:30 Saturday
+8,CS481,Introduction to Mobile Programming,603,Dr Munim Shah,6:30 - 9:30 Tuesday
+9,CS485,Game Programming,305,Dr Munim Shah,11:45 - 2:45 Friday
+10,CS486,Virtual Reality,402,Dr Kamran Raza,11:45 - 2:45 Tuesday
+11,CS488,Introduction to Internet of Things,506,Dr Atiya Masood,3:00 - 6:00 Thursday
+12,CS490,Capstone Project,505,Mam Rukhsana Majeed,6:30 - 9:30 Tuesday
+13,CS497,Topics in Computer Science,601,Sir Israr Ali,3:00 - 6:00 Tuesday
+14,CS498,Individual Study in Computer Science,504,Dr Yasoob Mughal,3:00 - 6:00 Sunday
+15,CS499,Independent Research in Computer Science,201,Dr Aarij,6:30 - 9:30 Monday
+Serial No,Course Code,Course Name,ClassRoom,Instructor,Class Timing
+
+16,CS490,Capstone Project,601,Mam Madiha Munaf,11:45 - 2:45 Monday
+17,CS497,Topics in Computer Science,404,Sir Israr Ali,6:30 - 9:30 Tuesday
+18,CS498,Individual Study in Computer Science,504,Sir Haris Khattak,8:30 - 11:30 Saturday
+19,CS499,Independent Research in Computer Science,305,Dr Yasoob Mughal,6:30 - 9:30 Sunday
+20,CS500,Research Preperation in Computer Science,305,Dr.Ahad Abro,8:30 - 11:30 Sunday
+21,CS511,Introduction to Bioinformatics,501,Dr Kamran Raza,3:00 - 6:00 Tuesday
+22,CS512,Introduction to Data Mining,602,Dr Abdul Hameed,8:30 - 11:30 Thursday
+23,CS513,Analysis and Intractability of Algorith,305,Miss Rahat Jehan,6:30 - 9:30 Tuesday
+24,CS535,Introduction to Computer Graphics,301,Dr b,6:30 - 9:30 Wednesday
+25,CS536,Introduction to 3D Game Graphics,102,Dr W,3:00 - 6:00 Sunday
+26,CS537,Data Communication and Computer Networks,202,Dr Hamid Sheikh,3:00 - 6:00 Tuesday
+27,CS538,Cryptography and Network Security,501,Sir Syed Saiq,3:00 - 6:00 Thursday
+28,CS551,Advanced Programming Languages,405,Dr Atiya Masood,11:45 - 2:45 Thursday
+29,CS553,Compilers,603,Sir Haris Khattak,11:45 - 2:45 Friday
+30,CS575,Machine Learning,505,Dr Syed Kaif Ali,11:45 - 2:45 Tuesday
+31,CS612,Data Mining in Bioinformatics,303,Dr W,6:30 - 9:30 Sunday
+Serial No,Course Code,Course Name,ClassRoom,Instructor,Class Timing
+
+32,CS105,Computational Thinking (B4),503,Dr Syed Hasan Adil,6:30 - 9:30 Sunday
+33,CS105,Computational Thinking (B4),102,Dr Mansoor,11:45 - 2:45 Sunday
+34,CS110,Foundations of Data Science,203,Dr Kamran Raza,11:45 - 2:45 Monday
+35,CS110,Foundations of Data Science,104,Dr Kamran Raza,8:30 - 11:30 Wednesday
+36,CS200,Selected Topics in Computing,505,Mam Beenish Ahmed,11:45 - 2:45 Wednesday
+37,CS200,Selected Topics in Computing,304,Dr Syed Hasan Adil,11:45 - 2:45 Wednesday
+38,CS211,Computer Science II (required),104,Mam Beenish Ahmed,3:00 - 6:00 Saturday
+39,CS211,Computer Science II (required),504,Dr Aarij,11:45 - 2:45 Sunday
+40,CS231,Assembly Language and Digital Circuits (,503,Dr Syed Hasan Adil,6:30 - 9:30 Friday
+41,CS231,Assembly Language and Digital Circuits (,206,Dr Syed Hasan Adil,8:30 - 11:30 Thursday
+42,CS301,Computer Mastery (BB) (Not for CS majors,102,Dr Mansoor,8:30 - 11:30 Sunday
+43,CS301,Computer Mastery (BB) (Not for CS majors,501,Dr Mansoor,6:30 - 9:30 Saturday
+44,CS302,Algorithmic Justice,403,Sir Ali Ahmad,8:30 - 11:30 Friday
+45,CS302,Algorithmic Justice,401,Sir Qasim,6:30 - 9:30 Wednesday
+46,CS305,Problem Solving with Java Programming (,504,Dr Abdul Hameed,11:45 - 2:45 Wednesday
+47,CS305,Problem Solving with Java Programming (,402,Sir Qasim,11:45 - 2:45 Sunday
+48,CS306,Introduction to Computer Animation,501,Sir Qasim,11:45 - 2:45 Thursday
+49,CS306,Introduction to Computer Animation,501,Dr Syed Hasan Adil,8:30 - 11:30 Tuesday
+50,CSC-2,Python,605,Dr Aarij,11:45 - 2:45 Saturday
+51,CSC-2,Python,106,Dr Aarij,8:30 - 11:30 Sunday

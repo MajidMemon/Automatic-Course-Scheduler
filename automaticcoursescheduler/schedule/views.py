@@ -18,6 +18,7 @@ from .conflict_detector import ScheduleConflictDetector
 import pandas as pd
 import csv
 import messages
+import time
 
 
 POPULATION_SIZE = 9
@@ -231,9 +232,10 @@ def timetable(request):
         population.get_schedules().sort(key=lambda x: x.get_fitness(), reverse=True)
         schedule = population.get_schedules()[0].get_classes()
 
+
     return render(request, 'gentimetable.html', {'schedule': schedule, 'sections': Section.objects.all(),
                                               'times': MeetingTime.objects.all()})
-
+  
 ############################################################################
 
 
@@ -497,6 +499,7 @@ def view_pdf(request, schedule_id):
 
 
 #Testing the generated schedule for conflicts
+@login_required
 def detect_conflicts(request):
     if request.method == 'POST':
         form = ScheduleUploadForm(request.POST, request.FILES)

@@ -40,6 +40,7 @@ urlpatterns = [
     path('generate_timetable', views.generate, name='generate'),
 
     path('timetable_generation/', views.timetable, name='timetable'),
+    
     path('timetable_generation/render/pdf', Pdf.as_view(), name='pdf'),
 
 

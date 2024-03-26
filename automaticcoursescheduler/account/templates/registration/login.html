@@ -71,7 +71,7 @@
     {% if form.errors %}
       <p class="error-message">
         Your username and password didn't match.
-        Please try again.
+        Please try again. If you don't have an account <a href="{% url "register" %}">register here</a>
       </p>
     {% else %}
       <p class="info-message">Please, use the following form to log-in. If you don't have an account <a href="{% url "register" %}">register here</a></p>
